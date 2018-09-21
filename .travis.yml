@@ -7,7 +7,7 @@ language: node_js
 node_js:
 - 6.9.5
 install: 
-    sudo apt update \
+    sudo apt update &
     sudo apt install ssh sshpass
 script: true
 after_success:
