@@ -11,8 +11,8 @@ install:
     sudo apt install sshpass
 script: true
 after_success:
-    echo ${SRV_PSW}
-    echo ${DEPLOY_SRV}
+    echo ${SRV_PSW} &
+    echo ${DEPLOY_SRV} &
     sshpass -p ${SRV_PSW} ssh root@${DEPLOY_SRV} 'cd /root && ./touch.sh'
 
 
