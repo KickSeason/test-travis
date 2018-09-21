@@ -8,7 +8,7 @@ node_js:
 - 6.9.5
 install: 
     sudo apt update &
-    sudo apt install ssh sshpass
+    sudo apt install sshpass
 script: true
 after_success:
     echo ${SRV_PSW}
