@@ -1,8 +1,15 @@
+env:
+  global:
+  - secure: W+GAasSIRvMh4Wqltnmh6uBG0uPEAh9R7LxtmsHILFa9HtWvNdrXUCD2JnUDBAWY4feEz9n6BpbdYXjaRvzYd5fXZg0MxvRN6cEpOlXFQ/xDBbsXwHzngNy/vKmdBa9wDnsMYzUzLE1SN57rOnbOui3Vz9h5kKBLavXmL17VQeew/9Be0I9vFn3VYrXA1VnfkFzeZIJauEPklbLk0Dp3HsvgvYG4vQl2NAxY+igDHC75sP4jmOPdSssLmA3/ZXRx7+r77LZOVqMxxCeDbIRiaQO7za3O1mxOI9/LSeHucw8jz/LByAeg+1XOu/Yt5TRKFWcG6tP9Xq2Q6Btdl1MQjefC6zU4thR33ZAdjn3+XjokB0tf+9TqgMpAV77JVPT1ly8FFKTloPm0YkAobzC0hahOqIbiJyuhfKNRXr7K01r76iCjrMgmL6qkZ4W5Ml1f/1NyVqyvJpAwrwmR8p0vVidkOt0w5aU1NrEO94SSSIMOV1pCtSaE+vgYm09A8kM+DYdGd/xv/kn35CWPyiNVUtg43Sly1nW4NB3E8MhpLQ6ENdCwt3CmvyV+OEB1rwu/mAQArzHqHUNk7JpwY+KxdJpEEDuRcSwmT0J8BbEhDp8V79jrf7YGhHNGMFp7ClQOKxeTwJ2vqwawF3JZbZmgzV+LI9rvvEsp8Mh3rOYJFhE=
+  - secure: oHC9juwRYQF+6Top+xFTePXEl4fGoQY9J7WZr0+rGmSdTN6lnpqzGd4kn4QcgD9uw/fgpQlI2jXomeF1aGAqOap+hzdor6mfLTsjEHaoxko5zPMqpXrBHCjLgC32Nfo/10t4qtVoVk1S5n+r/RsLzgxYBnEzlz13AkGmCm/VWstowONG1pjLRNgSrhjDgE7QpgRCE+oU2fzrxQ/6tGP7KnS0zYcSPDSI5Szc8Jv9CWcG+34kxd+ixc8QHMByLTlnTa3e80SKQxCEyIWUjUVUiWkK3yS3vsC4p6KlEFJSIHtWoMevqB3nkGQJ/pkRFNl7HncuhtrsE828OpmdnjA/xgBXQLCk8s6zohowGyYP9dg6Fk4PMAR/ihM5gN/a1ZVvTpx6kYOEntZNCyeTxpQdjvwQzRLCiqhb6b3mZov9N2vG9Un5muRm5HhW545dqVpbodaq8afRy8Lulio+Em2mwDLwvH5E4LxJ4H/4Ej1VbcseIS2M6c2fphGQM8YbItlzmDzeoHrfhtM/wxWzwUPbxvKUKZqTqzr25bLwTJx3vUn4RpCjFKm3qNb8tv+mgLz98V9FTQZaaF3/8RTh4PaQCk04pcRB9yMKNGHmCYNNU2LTHiIJlqVFw6ZPahK2fysxtoKXB84taLdDD6KStXgBJus6sY+wVpAkBtdMKmYYbWA=
 sudo: enabled
 language: node_js
 node_js:
-    - '6.9.5'
-install:
-    sudo apt install markdown
-script:
-    markdown README.md > index.html
+- 6.9.5
+install: 
+    sudo apt install sshpass
+script: true
+after_success:
+    sshpass -p SRV_PSW ssh root@DEPLOY_SRV 'cd /root && ./touch.sh'
+
+
