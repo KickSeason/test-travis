@@ -3,6 +3,6 @@ language: node_js
 node_js:
     - '6.9.5'
 install:
-    apt install markdown
+    sudo apt install markdown
 script:
     markdown README.md > index.html
