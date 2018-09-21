@@ -1,1 +1,7 @@
-language: 
+language: node_js
+node_js:
+    - '6.9.5'
+install:
+    apt get install markdown
+script:
+    markdown README.md > index.html
