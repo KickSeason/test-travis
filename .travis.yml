@@ -1,4 +1,6 @@
 sudo: required
 script:
+    - apt update
+    - apt-get install sshpass
     - echo $hostpsw
-    - ssh root@47.90.189.186 -p $hostpsw 'cd /root & touch travis.com'
+    - sshpass -p $hostpsw ssh root@47.90.189.186 'cd /root & touch travis.com'
