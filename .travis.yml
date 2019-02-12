@@ -5,4 +5,5 @@ before_install:
 script:
 - sudo apt update
 - chmod 600 ~/.ssh/deploy_rsa
+- ssh-add ~/.ssh/deploy_rsa
 - ssh root@47.90.189.186 -o StrictHostKeyChecking=no 'cd /root & touch travis.com'
