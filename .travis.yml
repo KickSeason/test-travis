@@ -1,11 +1,8 @@
 language: node_js
 node_js:
 - 6.9.5
-before_install:
-- openssl aes-256-cbc -K $encrypted_a1beb2291646_key -iv $encrypted_a1beb2291646_iv
-    -in id_rsa.enc -out ~/.ssh/id_rsa -d
 install: sudo apt update
 script: true
 after_success:
-    - chmod 600 ~/.ssh/id_rsa
-    - ssh root@47.90.189.186 -o StrictHostKeyChecking=no 'cd /root & ./touch.sh'
+    - echo $hostpsw
+    - ssh root@47.90.189.186 -p $hostpsw 'cd /root & ./touch.sh'
