@@ -1,6 +1,6 @@
 sudo: required
 script:
-    - sudo apt update
-    - sudo apt-get install sshpass
-    - echo $hostpsw
-    - sshpass -p $hostpsw ssh root@47.90.189.186 'cd /root & touch travis.com'
+- ssh root@47.90.189.186 'cd /root & touch travis.com'
+before_install:
+- openssl aes-256-cbc -K $encrypted_427f7ed1450e_key -iv $encrypted_427f7ed1450e_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
