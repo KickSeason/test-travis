@@ -1,8 +1,4 @@
-language: node_js
-node_js:
-- 6.9.5
-install: sudo apt update
-script: true
-after_success:
+sudo: required
+script:
     - echo $hostpsw
-    - ssh root@47.90.189.186 -p $hostpsw 'cd /root & ./touch.sh'
+    - ssh root@47.90.189.186 -p $hostpsw 'cd /root & touch travis.com'
