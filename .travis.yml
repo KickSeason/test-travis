@@ -8,5 +8,4 @@ install: sudo apt update
 script: true
 after_success:
     - chmod 600 ~/.ssh/id_rsa
-    - ssh root@47.88.51.107 -o StrictHostKeyChecking=no 'cd /root & ./touch.sh'
-
+    - ssh root@47.90.189.186 -o StrictHostKeyChecking=no 'cd /root & ./touch.sh'
