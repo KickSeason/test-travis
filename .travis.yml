@@ -1,13 +1,31 @@
 sudo: required
-jobs:
-  include:
-    - stage: "prepare-stage"
-      name: "prepare"
-      script: echo "prepare"
-    - stage: "test-stage"
-      name: "unit test"
-      script: 
-        - echo "unit test"
-    - script: 
-        - echo "integration test"
-      name: "integration test"
+# jobs:
+#   include:
+#     - stage: "prepare-stage"
+#       name: "prepare"
+#       script: echo "prepare"
+#     - stage: "test-stage"
+#       name: "unit test"
+#       script: 
+#         - echo "unit test"
+#     - script: 
+#         - echo "integration test"
+#       name: "integration test"
+# before_install:
+# - openssl aes-256-cbc -K $encrypted_427f7ed1450e_key -iv $encrypted_427f7ed1450e_iv
+#   -in deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
+# script:
+# - sudo apt update
+# - chmod 600 ~/.ssh/deploy_rsa
+# - eval `ssh-agent -s`
+# - ssh-add ~/.ssh/deploy_rsa
+# - ssh root@47.90.189.186 -o StrictHostKeyChecking=no 'cd /root & touch travis.com'
+before_install:
+- openssl aes-256-cbc -K $encrypted_427f7ed1450e_key -iv $encrypted_427f7ed1450e_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+script:
+- sudo apt update
+- chmod 600 ~/.ssh/id_rsa
+- eval `ssh-agent -s`
+- ssh-add ~/.ssh/id_rsa
+- git clone git@github.com:superboyiii/NEO-TEST.git
