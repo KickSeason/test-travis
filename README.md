@@ -1,2 +1,2 @@
 # test-travis
-a repo to test travis
+a repo to test travis ci
