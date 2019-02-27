@@ -1,4 +1,7 @@
 sudo: required
+## test return
+script:
+- ./run.sh
 ## test multiple jobs and stages
 # jobs:
 #   include:
@@ -33,15 +36,15 @@ sudo: required
 # - ssh-add ~/.ssh/id_rsa
 # - git clone git@github.com:superboyiii/NEO-TEST.git
 ## test common vm
-before_install:
-- echo "hello world" >> hw.txt
-jobs:
-  include:
-  - stage: build
-    name: build
-    script: cat hw.txt
-  - stage: test
-    name: test1
-    script: cat hw.txt
-  - script: cat hw.txt
-    name: test2
+# before_install:
+# - echo "hello world" >> hw.txt
+# jobs:
+#   include:
+#   - stage: build
+#     name: build
+#     script: cat hw.txt
+#   - stage: test
+#     name: test1
+#     script: cat hw.txt
+#   - script: cat hw.txt
+#     name: test2
