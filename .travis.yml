@@ -7,5 +7,5 @@ jobs:
     - stage: "test-stage"
       name: "unit test"
       script: echo "unit test"
-      - script: echo "integration test"
-        name: "integration test"
+    - script: echo "integration test"
+      name: "integration test"
