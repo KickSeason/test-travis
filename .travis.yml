@@ -1,7 +1,7 @@
 sudo: required
 ## test return
-script:
-- ./run.sh
+# script:
+# - ./run.sh
 ## test multiple jobs and stages
 # jobs:
 #   include:
@@ -48,3 +48,9 @@ script:
 #     script: cat hw.txt
 #   - script: cat hw.txt
 #     name: test2
+## docker run return
+services:
+- docker
+install:
+- docker build -t test ./
+- docker run --name test_return test
