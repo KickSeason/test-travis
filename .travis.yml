@@ -40,7 +40,7 @@ os:
 - osx
 
 ## stage & jobs
-jobs:
+matrix:
   include:
   - name: "os info"
     script: 
