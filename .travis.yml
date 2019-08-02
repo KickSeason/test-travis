@@ -38,16 +38,15 @@ sudo: required
 os:
 - linux
 - osx
-
+before_install:
+  - echo "before"
+script:
+  - uname -a
 ## stage & jobs
-matrix:
+jobs:
   include:
-  - name: "os info"
-    script: 
-    - uname -a
-  - name: "hello"
-    script:
-    - echo "hello"
+    - script:
+      - echo "hello"
 ## docker run return
 # services:
 # - docker
