@@ -40,10 +40,8 @@ matrix:
   include:
   - name: "linux test"
     os: linux
-    env: TEST_SUITE=linux-test
   - name: "osx test"
     os: osx
-    env: TEST_SUITE=osx-test
 before_install:
 - echo "hello world" >> hw.txt
 script: 
