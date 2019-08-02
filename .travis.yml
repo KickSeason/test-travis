@@ -40,13 +40,12 @@ before_install:
 - echo "hello world" >> hw.txt
 jobs:
   include:
-  - stage: build
-    name: build
-    script: cat hw.txt
   - stage: test
     name: test1
-    script: cat hw.txt
-  - script: cat hw.txt
+    script: 
+    - cat hw.txt
+  - script: 
+    - cat hw.txt
     name: test2
 ## docker run return
 # services:
