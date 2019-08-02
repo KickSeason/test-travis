@@ -43,12 +43,9 @@ before_install:
 script:
   - uname -a
   - echo "hello"
-## stage & jobs
-jobs:
-  include:
-    - script:
-      - echo "hello"
-      - uname -a
+script:
+    - echo "hello"
+    - uname -a
 ## docker run return
 # services:
 # - docker
