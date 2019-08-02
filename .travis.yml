@@ -36,6 +36,9 @@ sudo: required
 # - ssh-add ~/.ssh/id_rsa
 # - git clone git@github.com:superboyiii/NEO-TEST.git
 ## stage & jobs
+os:
+  - linx
+  - osx
 before_install:
 - echo "hello world" >> hw.txt
 jobs:
