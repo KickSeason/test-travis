@@ -36,12 +36,12 @@ sudo: required
 # - ssh-add ~/.ssh/id_rsa
 # - git clone git@github.com:superboyiii/NEO-TEST.git
 ## stage & jobs
-Matrix:
+matrix:
   include:
-  - name: linux test
+  - name: "linux test"
     os: linux
     env: TEST_SUITE=linux-test
-  - name: osx test
+  - name: "osx test"
     os: osx
     env: TEST_SUITE=osx-test
 before_install:
