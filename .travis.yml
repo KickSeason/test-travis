@@ -1,3 +1,4 @@
+sudo: required
 ## test return
 # script:
 # - ./run.sh
@@ -38,19 +39,11 @@
 Matrix:
   include:
   - os: linux
-    sudo: required
-    name: test1
-    before_install:
-    - echo "hello world" >> hw.txt
-    script: 
-    - cat hw.txt
   - os: osx
-    sudo: required
-    before_install:
-    - echo "hello world" >> hw.txt
-    script: 
-    - cat hw.txt
-    name: test2
+before_install:
+- echo "hello world" >> hw.txt
+script: 
+- cat hw.txt
 ## docker run return
 # services:
 # - docker
