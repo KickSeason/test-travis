@@ -35,18 +35,19 @@ sudo: required
 # - eval `ssh-agent -s`
 # - ssh-add ~/.ssh/id_rsa
 # - git clone git@github.com:superboyiii/NEO-TEST.git
+os:
+- linux
+- osx
+
 ## stage & jobs
-matrix:
+jobs:
   include:
-  - name: "linux test"
-    os: linux
-  - name: "osx test"
-    os: osx
-before_install:
-- echo "hello world" >> hw.txt
-script: 
-- uname -a
-- cat hw.txt
+  - name: "os info"
+    script: 
+    - uname -a
+  - name: "hello"
+    script:
+    - echo "hello"
 ## docker run return
 # services:
 # - docker
