@@ -36,18 +36,16 @@ sudo: required
 # - ssh-add ~/.ssh/id_rsa
 # - git clone git@github.com:superboyiii/NEO-TEST.git
 ## stage & jobs
-os:
-  - linx
-  - osx
 before_install:
 - echo "hello world" >> hw.txt
-jobs:
+Matrix:
   include:
-  - stage: test
+  - os: linux
     name: test1
     script: 
     - cat hw.txt
-  - script: 
+  - os: osx
+    script: 
     - cat hw.txt
     name: test2
 ## docker run return
