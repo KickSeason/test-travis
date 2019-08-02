@@ -38,14 +38,17 @@ sudo: required
 os:
 - linux
 - osx
+env:
+- TEST_SUITE=all-without-cultures
+- TEST_SUITE=cultures
 before_install:
   - echo "before"
-script:
-  - uname -a
-  - echo "hello"
-script:
-    - echo "hello"
-    - uname -a
+script: |
+    if [[ "$TEST_SUITE" == cultures ]]; then 
+      uname -a
+    else
+      echo "hello"
+    fi
 ## docker run return
 # services:
 # - docker
